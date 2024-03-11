@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+// Define a function for calculating the integral
+double integral(double (*func)(double), double a, double b, int n) {
+    double dx = (b - a) / n;
+    double sum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        double x_left = a + i * dx;
+        double x_right = a + (i + 1) * dx;
+        sum += (func(x_left) + func(x_right)) / 2.0 * dx;
+    }
+    return sum;
+}
+
+// Define a simple function for testing
+double f(double x) {
+    return x * x; // Example: Integral of x^2
+}
+
+int main() {
+    double a, b;
+    int n;
+
+    // Take inputs and calculate the integral
+    cout << "Enter the lower limit of integration: ";
+    cin >> a;
+    cout << "Enter the upper limit of integration: ";
+    cin >> b;
+    cout << "Enter the number of subintervals: ";
+    cin >> n;
+
+    // Calculate the integral and print the result
+    double result = integral(f, a, b, n);
+    cout << "The integral of the function is approximately: " << result << endl;
+
+    return 0;
+}
