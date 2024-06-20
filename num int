@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Define a function for calculating the integral
+// Define a function for calculating the integral.025102
 double integral(double (*func)(double), double a, double b, int n) {
     double dx = (b - a) / n;
     double sum = 0.0;
