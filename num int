@@ -1,7 +1,8 @@
+// l0000011111111111111
 #include <iostream>
 using namespace std;
 
-// Define a function for calculating the integral0000011111111111111
+// Define a function for calculating the integra
 double integral(double (*func)(double), double a, double b, int n) {
     double dx = (b - a) / n;
     double sum = 0.0;
